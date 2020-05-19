@@ -1,0 +1,28 @@
+Threshold:
+
+#load library
+library(quickpsy)
+#read in data
+dat <- quickreadfiles(subject = c('T1', 'T2', 'T3', 'T4', 'T5', 'T6'))
+#fit the data to the psychometric function, parini adjusts the axis
+fit <- quickpsy(dat, pressure, resp, grouping =.(cond, subject))
+#plot the curve
+plot1 <- plot(fit)
+#plot the bar graph
+plot2 <- plotthresholds(fit, color = cond)
+#display
+plot1
+plot2
+
+Spatial resolution:
+
+#load library
+library(quickpsy)
+#read in data
+dat <- quickreadfiles(subject = c('P1', 'P2', 'P3', 'P4', 'P5', 'P6')
+#fit the data to the psychometric function, parini adjusts the axis
+fit <- quickpsy(dat, distance, resp, grouping =.(ecc, subject), parini = list(c(15,30), c(15,30), c(15,30), c(15,30), c(15,30), c(15,30)))
+#plot the curve
+plot1 <- plot(fit)
+#display
+plot1
